@@ -48,9 +48,14 @@ class Student {
         cout<<"The details of the Student are: "<<endl;
     }
 
-    Student(string studentName , int roll){
-        name = studentName;
-        rollno = roll;
+    Student(string name , int rollno){
+        this->name = name;
+        this->rollno = rollno;
+    }
+
+    Student(Student &st){
+        name = st.name;
+        rollno = st.rollno;
     }
 
     void display(){
@@ -62,6 +67,11 @@ class Student {
 int main(){
     Student s;
     Student s1("Muskan Goyal", 17);
+    Student s2(s1);
+
+    cout<<"Copied value with the help of copy constructor "<<endl;
+    cout<<s2.name<<endl;
+    cout<<s2.rollno<<endl;
 
     s1.display();
 }
@@ -72,3 +82,4 @@ int main(){
 //in dynamic we need to delete the memory - for example--> pointers we need a delete keyword
 //this keyword differentiates the parameter names if we have same name
 //copy constructor - when an object copies the other object
+

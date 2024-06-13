@@ -9,8 +9,10 @@ using namespace std;
 int main() {
     int var = 5;
     int *ptr = &var; //ptr pointed to var address
+
+    int *ptr1 = NULL;
     
-    int **ptr2 = &ptr;
+    int **ptr2 = &ptr; //ptr2 pointing and storing ptr address 
 
     cout<< var << endl; // value of var
     cout<<&var<<endl; //address of var
@@ -21,4 +23,11 @@ int main() {
     cout<<*ptr2<<endl; //ptr address
     cout<<**ptr2<<endl; //ptr value or value of var
 }
+
+//types of pointers
+// null pointers -- if we dont have a memory to point from pointer then the pointer points to null
+// dangling pointers -- when we delete the address pointer was pointing to so it is now a dangling pointer
+//pointer dangling to NULL so it doesnot take memory space more
+// void pointers -- not restricted to anny datatype but to dereference it is tough we need to change datatype according to its value
+// wild value -- an uninitialised pointer
 
