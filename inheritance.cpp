@@ -43,8 +43,12 @@ r1.show();
 s1.showdata();
 r1.details();
 s2.showdata();
+
 }
 
 //Inheritance helps us create a new class(derived/child class) from an exsisting class(base/parent class)
 //Here, Records is the derived class and Student is the base class. Records(derived class) inherits all the properties of Student(base class) and can even have additional features of its own
 //protected and public methods and data variables are only accessible by parent and child class
+//private methods and data variables are only accessible by parent class
+//private can only be accessed as class Records : private Student
+//and if i access all public protected and private variables of parent class in child class then all becomes private
