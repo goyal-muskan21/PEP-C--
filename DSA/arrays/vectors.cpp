@@ -8,7 +8,6 @@ int main(){
      arr.push_back(10);
      cout<<arr[2]<<endl;
      arr.at(2)=21;
-
      for(int item : arr){
           cout << item << " ";
      }
