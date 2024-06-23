@@ -1,114 +1,32 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
-// void fibSeries(){
-//      int n;
-//      cin>>n;
-//      int t1 = 0; 
-//      int t2 = 1;
-//      int nextTerm = 0;
-//      for (int i = 1; i<=n ; ++i) {
-//         if(i == 1) {
-//             cout << t1 << ", ";
-//             continue;
-//         }
-//         if(i == 2) {
-//             cout << t2 << ", ";
-//             continue;
-//         }
-//         nextTerm = t1 + t2;
-//         t1 = t2;
-//         t2 = nextTerm;
+void fibSumSeries(int n) {
         
-//         cout << nextTerm << ", ";
-//      }
+     vector<int> arr;
      
-// }
+     arr.push_back(1);
+     arr.push_back(1);
 
-// void fibbSum(int nums){
-//     int a = 0, b = 1, sum = 0;
-//     while(b <= nums){
-//      sum += b;
-//      int temp = a + b;
-//      a = b;
-//      b = temp;
-//      cout<<a<<" "<<b;
-//      }
-//      // int t1 = 1; 
-//      // int t2 = 1;
-//      // int nextTerm;
-//      // int sum = 0;
-//      // // int a;
-//      // for (int i = 1; i<=nums ; ++i) {
-//      //    if(i == 1) {
-//      //        cout << t1 ;
-//      //        continue;
-//      //    }
-//      //    if(i == 2) {
-//      //        cout << t2 ;
-//      //        continue;
-//      //    }
-//      //    nextTerm = t1 + t2;
-//      //    t1 = t2;
-//      //    t2 = nextTerm;
-        
-//      //    cout << nextTerm ;
-//      // }
-//      // cout<<endl;
-//      // for(int i = 1; i < nextTerm ; i++){
-//      //      // a = nextTerm + i;
-//      //      if(nextTerm % i == 0){
-//      //           sum += i;
-//      //           }
-//      // }
-//      // // sum = a;
-//      // cout << sum << endl;
-     
-// }
-
-// int main(){
-//      int t;
-//      cin>>t;
-//      int nums;
-//      while(t-->0){ 
-//           cin>>nums;
-//           fibbSum(nums);
-//           // fibSeries();
-//      }
-// }
-
-
-void fibSum(int number){
-     int a = 1, b = 1, sum = 2, temp, count = 2;
-     while(count <= number){
-          temp = a + b;
-          a = b;
-          b = temp;
-          sum += temp;
-          count++;
+     int sum = 2;
+     for(int i = 2; i < n; i++) {
+          arr.push_back(arr[i-1] + arr[i-2]);
+          sum = sum + arr[i];
      }
      cout << sum << endl;
-}
-void fibSeries(){
-     int t1 = 1, t2 = 1, nextTerm = 0, n;
-     cin >> n;
-     cout << t1 << " " << t2 << " ";
-     for(int i = 3; i <= n; ++i){
-          nextTerm = t1 + t2;
-          t1 = t2;
-          t2 = nextTerm;
-          cout << nextTerm << " ";
+     
+     for(int j: arr) {
+          cout << j << " ";
      }
-     cout << endl;
+
 }
 
 int main(){
-     int t;
+     int num, t;
      cin>>t;
-     int nums;
-     while(t-->0){ 
-          cin>>nums;
-          fibSum(nums);
-          fibSeries();
+     while(t--){
+     cin>>num;
+     fibSumSeries(num);
+     cout<<endl;
      }
 }
