@@ -1,7 +1,7 @@
 #include <iostream>
 
 using namespace std;
-
+  
 // Node structure for BST
 struct Node {
     int data;
